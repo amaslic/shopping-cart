@@ -1,0 +1,13 @@
+<template>
+	<div class="d-flex flex-wrap">
+	  <div class="card" style="width: 18rem;" repeat.for="product of cart.products">
+		<!--<img class="card-img-top" src="" alt="Card image cap">-->
+		<div class="card-body">
+		  <h5 class="card-title">${product.name}</h5>
+		  <p class="card-text">$ ${product.price}</p>
+		  <button class="btn btn-primary" click.delegate="removeFromCart(product)">Remove from cart</button>
+		</div>
+	  </div>
+	  </div>
+
+</template>
