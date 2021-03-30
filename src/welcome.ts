@@ -27,7 +27,7 @@ export class Welcome {
 		this.added = true;
 		this.store.dispatch(addToCart, product);
 
-		let timeout = setInterval( () => {this.added = false; clearInterval(timeout); }, 3000);
+		let timeout = setInterval( () => {this.added = false; clearInterval(timeout); }, 1000);
 
 	}
 

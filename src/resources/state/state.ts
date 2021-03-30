@@ -36,7 +36,7 @@ export const initialState : IState = {
 	},
 	user: {
 		name: '',
-		email: ''
+		address: ''
 	}
 };
   
