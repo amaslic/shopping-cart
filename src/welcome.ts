@@ -21,7 +21,7 @@ export class Welcome {
 		this.store.registerAction('AddToCart', addToCart);
 	}
 
-	  addToCart = (product) => {
+	addToCart = (product) => {
 
 		this.name = product.name;
 		this.added = true;
@@ -29,6 +29,6 @@ export class Welcome {
 
 		let timeout = setInterval( () => {this.added = false; clearInterval(timeout); }, 3000);
 
-	  }
+	}
 
 }

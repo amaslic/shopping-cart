@@ -1,18 +1,16 @@
 <template>
 	<require from="./resources/elements/alert"></require>
-	<div class="d-flex flex-wrap">
-		<div class="card m-4" style="width: 18rem;" repeat.for="product of products">
-		<!--<img class="card-img-top" src="" alt="Card image cap">-->
-			<div class="card-body">
-			<h5 class="card-title">${product.name}</h5>
-			<p class="card-text">Price: $ ${product.price}</p>
-			<button disabled.bind=added class="btn btn-primary" click.delegate="addToCart(product)">Add to cart</button>
-			</div>
-	  	</div>
-	</div>
+	<require from="./resources/elements/product"></require>
 	
+	<div class="d-flex flex-wrap justify-content-center mt-5">
+		<div  class="card m-2 p-2" repeat.for="product of products" >
+			<product product.bind=product></product>
+			<div class="card-footer d-flex justify-content-center">
+				<button disabled.bind=added class="btn btn-primary" click.delegate="addToCart(product)">Add to cart</button>
+			</div>
+		</div>
+	</div>
 	<div if.bind=added class="col-md-3 alert-box">
 		<alert value.bind=name></alert>
-
 	</div>
 </template>
