@@ -1,7 +1,8 @@
 import {bindable} from 'aurelia-framework';
 
 export class Alert {
-  @bindable value;
+  @bindable msg: string;
+  @bindable show: boolean;
 
   valueChanged(newValue, oldValue) {
     //

@@ -15,7 +15,7 @@ import { addToCart } from './actions';
 export class Welcome {
 	
 	public added: boolean = false;
-	public name: string = '';
+	public alertMsg: string = '';
 
 	constructor(private store: Store<IState>) {
 		this.store.registerAction('AddToCart', addToCart);
@@ -23,9 +23,9 @@ export class Welcome {
 
 	addToCart = (product) => {
 
-		this.name = product.name;
 		this.added = true;
 		this.store.dispatch(addToCart, product);
+		this.alertMsg = `${product.name} successfully added to cart.`;
 
 		let timeout = setInterval( () => {this.added = false; clearInterval(timeout); }, 1000);
 

@@ -17,6 +17,8 @@ export class Cart {
 	public userProducts: IProduct[] = [];
 	public total: number = 0;
 	public items: any = [];
+	public alertMsg: string = '';
+	public added: boolean = false;
 
 	constructor(private store: Store<IState>) {
 		this.store.registerAction('RemoveFromCart', removeFromCart);
@@ -34,10 +36,7 @@ export class Cart {
 	}
 
 	calculateTotal = (products) => {
-		this.total = 0;
-		products.map( val => {
-			this.total += val.price;
-		})
+		this.total = products.reduce ( (acc, val) => acc + val.price, 0);
 	}
 	 
 }

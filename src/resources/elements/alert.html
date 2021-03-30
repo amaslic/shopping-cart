@@ -1,8 +1,9 @@
 <template>
 	
-	<div class="alert alert-success">
-		<h4>${value}</h4> 
-		Successfully added to cart. 
+	<div class="col-md-3 alert-box">
+		<div class="alert alert-success" if.bind=!show>
+			<span>${msg}</span> 
+		</div>
 	</div>
 
 </template>

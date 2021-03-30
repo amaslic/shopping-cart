@@ -30,6 +30,7 @@ export class Checkout {
 
   checkout = () => {
 	this.store.dispatch(checkout);
+	
   }
 
 
