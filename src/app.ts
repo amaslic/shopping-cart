@@ -14,7 +14,7 @@ export class App {
 			name: 'welcome',
 			moduleId: PLATFORM.moduleName('./welcome'),
 			nav: true,
-			title: 'Welcome'
+			title: 'Home'
 		  },
 		  {
 			route: ['cart'],
@@ -28,6 +28,4 @@ export class App {
 		this.router = router;
 	  }
 	
-	  
-	  
 }

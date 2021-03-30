@@ -13,13 +13,22 @@ import { addToCart } from './actions';
 })
 
 export class Welcome {
+	
+	public added: boolean = false;
+	public name: string = '';
 
 	constructor(private store: Store<IState>) {
 		this.store.registerAction('AddToCart', addToCart);
 	}
 
 	  addToCart = (product) => {
+
+		this.name = product.name;
+		this.added = true;
 		this.store.dispatch(addToCart, product);
+
+		let timeout = setInterval( () => {this.added = false; clearInterval(timeout); }, 3000);
+
 	  }
 
 }

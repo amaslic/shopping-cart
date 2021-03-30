@@ -6,15 +6,14 @@ import { pluck } from 'rxjs/operators';
 
 @autoinject()
 
-
-
 @connectTo<IState>({
     selector: {
       cart: (store) => store.state.pipe(pluck('cart')),
     }
 })
 
-export class Test {
+export class Cart {
+
 
 	constructor(private store: Store<IState>) {
 		this.store.registerAction('RemoveFromCart', removeFromCart);

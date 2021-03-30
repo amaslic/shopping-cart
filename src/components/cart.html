@@ -1,6 +1,10 @@
 <template>
+	
 	<div class="d-flex flex-wrap">
-	  <div class="card" style="width: 18rem;" repeat.for="product of cart.products">
+		<h3 if.bind="cart.products.length === 0" class="m-4">
+			Cart is empty!
+		</h3>
+	  <div class="card m-4" style="width: 18rem;" repeat.for="product of cart.products">
 		<!--<img class="card-img-top" src="" alt="Card image cap">-->
 		<div class="card-body">
 		  <h5 class="card-title">${product.name}</h5>
@@ -9,5 +13,6 @@
 		</div>
 	  </div>
 	  </div>
+
 
 </template>
