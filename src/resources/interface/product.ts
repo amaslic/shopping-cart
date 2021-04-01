@@ -3,5 +3,6 @@ export default interface IProduct{
 	price: number,
 	name: string,
 	img_url: string | null,
-	qty: number
+	qty: number,
+	description: string
 }

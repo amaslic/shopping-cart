@@ -24,7 +24,7 @@ export class Cart {
 		this.store.registerAction('RemoveFromCart', removeFromCart);
 	}
 
-	removeFromCart (product){
+	removeFromCart (product: IProduct){
 		this.store.dispatch(removeFromCart, product);
 	}
 
@@ -35,8 +35,9 @@ export class Cart {
 		}
 	}
 
-	calculateTotal = (products) => {
+	calculateTotal = (products: IProduct[]) => {
 		this.total = products.reduce ( (acc, val) => acc + val.price, 0);
 	}
+
 	 
 }

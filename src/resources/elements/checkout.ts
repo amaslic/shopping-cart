@@ -1,4 +1,3 @@
-import {bindable} from 'aurelia-framework';
 import { autoinject } from 'aurelia-dependency-injection';
 import { connectTo, Store } from 'aurelia-store';
 import { IState } from 'resources/interface/state';
@@ -14,24 +13,17 @@ import { checkout } from '../../actions';
 })
 
 export class Checkout {
-  @bindable value;
+	public name: string = '';
+	public address: string = '';
 
-  public name: string = '';
-  public address: string = '';
-
-  valueChanged(newValue, oldValue) {
-    //
-  }
-
-  
+ 
 	constructor(private store: Store<IState>) {
 		this.store.registerAction('Checkout', checkout);
 	}
 
-  checkout = () => {
+	checkout = () => {
 	this.store.dispatch(checkout);
-	
-  }
+	}
 
 
 }

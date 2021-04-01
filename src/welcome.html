@@ -2,11 +2,25 @@
 	<require from="./resources/elements/alert"></require>
 	<require from="./resources/elements/product"></require>
 	
+	<div class="container mt-2">
+		<form>
+			<div class="form-group">
+				<input type="text" class="form-control" value.bind=query placeholder="Eg. Nike" />
+			</div>
+			<div class="form-group">	
+				<button type="submit" class="btn btn-primary form-control" click.delegate="filterProducts()">Search</button>
+			</div>
+		</form>
+	</div>
 	<div class="d-flex flex-wrap justify-content-center mt-5">
-		<div  class="card m-2 p-2" repeat.for="product of products" >
-			<product product.bind=product></product>
+		
+		<div  class="card m-2 p-2" repeat.for="product of allProducts" >
+			<a route-href='route: product; params.bind: {id: product.id}' >
+				<product product.bind=product></product>
+			</a>
 			<div class="card-footer d-flex justify-content-center">
-				<button disabled.bind=added class="btn btn-primary" click.delegate="addToCart(product)">Add to cart</button>
+				<button if.bind="product.qty > 0" disabled.bind=added class="btn btn-primary" click.delegate="addToCart(product)">Add to cart</button>
+				<button if.bind="product.qty === 0" disabled.bind=true class="btn btn-danger"">Out of stock</button>
 			</div>
 		</div>
 	</div>

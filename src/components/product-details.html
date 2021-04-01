@@ -1,0 +1,14 @@
+<template>
+	<require from="../resources/elements/product"></require>
+	<div class="d-flex align-items-center justify-content-center product-detail mt-5">
+		<div class="col-md-6">
+			<product product.bind=product if.bind=product></product>
+			<p>
+				${product.description}
+			</p>
+		</div>
+	</div>
+	<div if.bind=!product>
+		Product not found !
+	</div>
+</template>
